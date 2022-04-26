@@ -10,11 +10,12 @@ const atTheOldToad = {
     },
     addPotion(newPotion) {
         for (const potion of this.potions) {
-            if (potion === newPotion) {
+            if (potion === { newPotion }) {
                 return `Error! Potion ${newPotion} is already in your inventory!`;
             }
-            this.potions.push(newPotion);
+            this.potions.push({ newPotion });
         }
+        console.table(this.potions);
     },
     /*removePotion(potionName) {
         const potionIndex = this.potions.indexOf(potionName);
