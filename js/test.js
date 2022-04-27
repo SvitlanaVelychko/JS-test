@@ -9,13 +9,13 @@ const atTheOldToad = {
         return this.potions;
     },
     addPotion(newPotion) {
-        for (const potion of this.potions) {
-            if (potion === { newPotion }) {
-                return `Error! Potion ${newPotion} is already in your inventory!`;
-            }
-            this.potions.push({ newPotion });
+    for(const potion of this.potions) {
+        if (potion !== newPotion) {
+            this.potions.push(newPotion);
         }
-        console.table(this.potions);
+
+        return `Error! Potion ${potion.name} is already in your inventory!`;
+        }
     },
     /*removePotion(potionName) {
         const potionIndex = this.potions.indexOf(potionName);
@@ -41,3 +41,4 @@ const atTheOldToad = {
 console.log(atTheOldToad.getPotions());
 console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
 console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+console.log(atTheOldToad.potions);
