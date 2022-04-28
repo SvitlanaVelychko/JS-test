@@ -9,13 +9,21 @@ const atTheOldToad = {
         return this.potions;
     },
     addPotion(newPotion) {
-    for(const potion of this.potions) {
-        if (potion !== newPotion) {
-            this.potions.push(newPotion);
+        for (const potion of this.potions) {
+            if (potion.name === newPotion.name) {
+                return `Error! Potion ${newPotion.name} is already in your inventory!`;
+            }
         }
 
-        return `Error! Potion ${potion.name} is already in your inventory!`;
+        this.potions.push(newPotion);
+    },
+    /*addPotion(newPotion) {
+        for (const potion of this.potions) {
+            if (potion.name.includes(!newPotion.name)) {
+                this.potions.push(newPotion);
+            }
         }
+        return `Error! Potion ${newPotion.name} is already in your inventory!`;
     },
     /*removePotion(potionName) {
         const potionIndex = this.potions.indexOf(potionName);
