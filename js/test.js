@@ -83,14 +83,20 @@
 
 // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
 
-const calculateTotalPrice = (orderedItems) => {
-  let totalPrice = 0;
-
-  orderedItems.forEach(item => {
-    totalPrice += item;
+const changeEven = (numbers, value) => {
+  // Change code below this line
+  const newNumbers = [];
+ 
+  numbers.forEach(element => {
+    if (element % 2 === 0) {
+      element = element + value;
+    }
+    newNumbers.push(element);
   });
-
-  return totalPrice;
+  
+  return newNumbers;
+  // Change code above this line
 }
 
-console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+console.log(changeEven([1, 2, 3, 4, 5], 10));
