@@ -1,24 +1,22 @@
-class Car {
-  // Change code below this line
-  #brand;
-  model;
-  price; 
-
-  constructor({ brand, model, price }) {
-    this.#brand = brand;
-    this.model = model;
-    this.price = price;
+class User {
+  constructor(email) {
+    this.email = email;
   }
 
-  getBrand() {
-    return this.#brand;
+  get email() {
+    return this.email;
   }
 
-  changeBrand(newBrand) {
-    this.#brand = newBrand;
+  set email(newEmail) {
+    this.email = newEmail;
   }
-  // Change code above this line
+}
+// Change code below this line
+class Admin extends User {
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
 }
 
-
-console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+console.log(Admin.AccessLevel.BASIC);
