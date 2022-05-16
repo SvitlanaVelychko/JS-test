@@ -1,22 +1,17 @@
-class Car {
-  static #MAX_PRICE = 50000;
-  // Change code below this line
-
-  // Change code above this line
-  constructor({ price }) {
-    this.price = price;
+class Toggle {
+  constructor({ isOpen = false } = {}) {
+    this.on = isOpen;
   }
 
-  static checkPrice (price) {
-    if(price > Car.#MAX_PRICE) {
-      return 'Error! Price exceeds the maximum';
-    } 
-    return 'Success! Price is within acceptable limits';
+  toggle() {
+    this.on = !this.on;
   }
 }
 
-const audi = new Car({ price: 36000 });
-const bmw = new Car({ price: 64000 });
+const toggle1 = new Toggle();
+toggle1.toggle();
+console.log(toggle1.on);
 
-console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
-console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+const toggle2 = new Toggle({ isOpen: true });
+toggle2.toggle();
+console.log(toggle2.on);
