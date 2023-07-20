@@ -97,3 +97,38 @@
 //         console.log(this.name);
 //     };
 // };
+
+// Hoisting
+
+// function run() {
+//     var car = 'Honda';
+
+//     if (true) {
+//         var car = 'BMW';
+//     }
+
+//     console.log('car in run func: ', car);
+// }
+
+
+// function run() {
+//     let car = 'Honda';
+
+//     if (true) {
+//         let car = 'BMW';
+
+//         console.log('car in block: ', car);
+//     }
+
+//     console.log('car out of block: ', car);
+// }
+
+// (() => {
+//     'use strict';
+//     function run() {
+//         car1 = 'Tesla';
+//     }
+
+//     run();
+
+// })();

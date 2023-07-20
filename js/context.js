@@ -1,37 +1,37 @@
-(() => {
-    var a = 7;
+// (() => {
+//     var a = 7;
 
-    // var anonymus = {
-    // a: 7,
-    // test: function() { },
-    // b: function () { },
-    // this: undefined,
-    // parent: window,
-    // }
+//     // var anonymus = {
+//     // a: 7,
+//     // test: function() { },
+//     // b: function () { },
+//     // this: undefined,
+//     // parent: window,
+//     // }
 
-    function test() {
-        console.log(a);
+//     function test() {
+//         console.log(a);
 
-        // var test = {
-    // this: undefined,
-    // parent: anonymus,
-    // }
-    }
+//         // var test = {
+//     // this: undefined,
+//     // parent: anonymus,
+//     // }
+//     }
 
-    function b() {
-        var a = 10;
+//     function b() {
+//         var a = 10;
 
-        test();
+//         test();
 
-        // var b = {
-    // a: 10,
-    // this: undefined,
-    // parent: anonymus,
-    // }
-    }
+//         // var b = {
+//     // a: 10,
+//     // this: undefined,
+//     // parent: anonymus,
+//     // }
+//     }
 
-    b();
-})();
+//     b();
+// })();
 
 // const bob = {
 //     name: 'Bob',
@@ -80,7 +80,7 @@
 
 // const bill = {
 //     name: 'Bill',
-//     getName: Blob.getName,
+//     getName: bob.getName,
 // }
 
 // bill.getName()
@@ -93,3 +93,53 @@
 //     console.log(this);
 //     console.log(bob.name);
 // }
+
+**
+//Carrying - создание новой функции путём фиксирования аргументов существующей //
+
+// const multiply = (a, b) => a * b;
+
+// const multiply5 = multiply.bind(null, 5);
+**
+    
+// function StartPage(router, params) {
+//     //router.goTo()
+//     //router.back()
+//     //router.saveIntoBookmark()
+// }
+
+// const StartPageWithRouting = StartPage.bind(this, new RouterLib());
+
+//Декорирование - способность добавить функции фукционал не изменяя саму фукцию//
+
+**
+    
+// function StartPage(router, params) {
+//     //router.goTo()
+//     //router.back()
+//     //router.saveIntoBookmark()
+// }
+
+// function withRouter(component) {
+//     const routerApi = new RouterLib();
+//     return component.bind(this, routerApi);
+// }
+
+// const StartPageWithRouting = withRouter(StartPage);
+
+**
+
+// function checkPermissionDecorator(f) {
+//     return function (user) {
+//         if (isAdmin(user)) {
+//             return f.apply(this, args);
+//         }
+//         alert('Не достатньо прав');
+//     }
+// }
+
+// function save(user) {
+//     localStorage.setItem('user', user);
+// }
+
+// const saveWithPermission = checkPermissionDecorator(save);
